@@ -103,10 +103,11 @@
   display: block;
 }
 
-.teacher-item footer button {
+.teacher-item footer .button {
   width: 20rem;
   height: 5.6rem;
-  background: var(--color-button-text);
+  background: var(--color-secondary);
+  color: var(--color-button-text);
   border: 0;
   border-radius: 0.8rem;
   cursor: pointer;
@@ -122,7 +123,7 @@
   margin-left: 1.6rem;
 }
 
-.teacher-item footer button:hover {
+.teacher-item footer .button:hover {
   background-color: var(--color-secondary-dark);
 }
 
@@ -163,13 +164,13 @@
     margin-left: 16px;
   }
 
-  .teacher-item footer bottom {
+  .teacher-item footer .bottom {
     width: 245px;
     font-size: 16px;
     justify-content: center;
   }
 
-  .teacher-item footer bottom img {
+  .teacher-item footer .bottom img {
     margin-right: 16px;
   }
 }

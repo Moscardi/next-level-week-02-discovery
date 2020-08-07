@@ -3,16 +3,19 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Proffy</title>
+
+    <link rel="shortcut icon" href="/images/favicon.png" type="image/png" />
+
+    <title>Proffy | Sua plataforma de estudos</title>
 
     <!-- 
         Cria link de página de estilo entre este arquivo html e o style.css
      -->
 
-    <link href="./../public/styles/main.css" rel="stylesheet" />
-    <link href="./../public/styles/partials/hearder.css" rel="stylesheet" />
-    <link href="./../public/styles/partials/forms.css" rel="stylesheet" />
-    <link href="./../public/styles/partials/page-give-classes.css" rel="stylesheet" />
+    <link href="/styles/main.css" rel="stylesheet" />
+    <link href="/styles/partials/hearder.css" rel="stylesheet" />
+    <link href="/styles/partials/forms.css" rel="stylesheet" />
+    <link href="/styles/partials/page-give-classes.css" rel="stylesheet" />
 
     <!--
         Cria link de página de estilo entre este arquivo html e um arquivo de
@@ -23,16 +26,14 @@
       rel="stylesheet"
     />
 
-    <script defer src="./../public/scripts/addField.js"></script>
+    <script defer src="/scripts/addField.js"></script>
   </head>
   <body id="page-give-classes">
     <div id="container">
       <header class="page-header">
         <div class="top-bar-container">
-          <a href="./index.html">
-            <img src="./../public/images/icons/back.svg" alt="Voltar"
-          /></a>
-          <img src="./../public/images/logo.svg" alt="Proffy" />
+          <a href="/"> <img src="/images/icons/back.svg" alt="Voltar" /></a>
+          <img src="/images/logo.svg" alt="Proffy" />
         </div>
 
         <div class="header-content">
@@ -77,15 +78,12 @@
               <label for="subject">Matéria</label>
               <select name="subject" id="subject" required>
                 <option value="">Selecione uma opção</option>
-                <option value="2">Biologia</option>
-                <option value="3">Ciências</option>
-                <option value="4">Educação Física</option>
-                <option value="5">Física</option>
-                <option value="6">Geografia</option>
-                <option value="7">História</option>
-                <option value="8">Matemática</option>
-                <option value="9">Português</option>
-                <option value="10">Química</option>
+
+                {% for subject in subjects %}
+                <option value="{{loop.index}}">
+                  {{subject}}
+                </option>
+                {% endfor %}
               </select>
             </div>
 
@@ -99,7 +97,7 @@
 
           <fieldset id="schedule-items">
             <legend>
-              Horários disponíveis
+              <div>Horários disponíveis</div>
               <button id="add-time">+ Novo Horário</button>
             </legend>
 
@@ -108,13 +106,12 @@
                 <label for="weekday">Dia da semana</label>
                 <select name="weekday[]" required>
                   <option value="">Selecione uma opção</option>
-                  <option value="0">Domingo</option>
-                  <option value="1">Segunda-feira</option>
-                  <option value="2">Terça-feira</option>
-                  <option value="3">Quarta-feira</option>
-                  <option value="4">Quinta-feira</option>
-                  <option value="5">Sexta-feira</option>
-                  <option value="6">Sábado</option>
+
+                  {% for day in weekdays %}
+                  <option value="{{ loop.index0}}">
+                    {{day}}
+                  </option>
+                  {% endfor %}
                 </select>
               </div>
 
@@ -133,7 +130,7 @@
 
         <footer>
           <p>
-            <img src="./../public/images/icons/warning.svg" alt="Aviso importante" />
+            <img src="/images/icons/warning.svg" alt="Aviso importante" />
             importante! <br />
             Preencha todos os dados
           </p>
